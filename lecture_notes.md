@@ -66,7 +66,7 @@ mysql-connector-python
 `pip install -r requirements.txt` To install these packages from the above page
 
 #### General Flow
-- **Create Config file (config.py)**: The config file is responsible for configuring the  the attributes of your flask API
+- **Create Config file (config.py)**: The config file is responsible for configuring the  the attributes of your flask API (database URI string: 'mysql+mysqlconnector://root:password@localhost/database')
 - **Create Database file (database.py)**: This file is responsible for configuring and initializing our SQLAlchemy database.
 - **Create our Application Factory (app.py)**: Here we create a function that will initialize our Flask App, configure the app using our config file, connect our app to our db, and also lay the ground work for our app schemas
 
