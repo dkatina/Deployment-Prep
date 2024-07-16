@@ -18,7 +18,7 @@
 
 We can take alot of these querying principles and further enhance the API we have been working on.
 
-- Filtering products using .where() and a query parameter search term
+- Filtering products using .where(), filter(), filter_by() and a query parameter search term
 - Linking orders to products using our products attribute and Nested Schemas .join()
 - Searching for order by order_id
 - Searching for orders by customer_id
