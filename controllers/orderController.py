@@ -2,6 +2,7 @@ from models.schemas.orderSchema import order_schema, orders_schema
 from flask import request, jsonify
 from marshmallow import ValidationError
 from services import orderService
+from utils.util import user_token_required
 
 def save():
     try:
@@ -16,13 +17,17 @@ def find_all():
     all_orders = orderService.find_all()
     return orders_schema.jsonify(all_orders), 200
 
-def find_by_id(id):
+
+def find_by_id(id, ):
     orders = orderService.find_by_id(id)
     return orders_schema.jsonify(orders), 200
 
-def find_by_customer_id(id):
-    print("printing in controller",id)
-    orders = orderService.find_by_customer_id(id)
+@user_token_required
+def find_by_customer_id(id, token_id):
+    if id == token_id:
+        orders = orderService.find_by_customer_id(id)
+    else:
+        return jsonify({"messages": "You can't view other peoples orders... scumbag"}), 401
     return orders_schema.jsonify(orders), 200
 
 def find_by_customer_email():

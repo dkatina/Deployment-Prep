@@ -8,6 +8,7 @@ from models.customer import Customer
 from models.order import Order
 from models.product import Product
 from models.orderProduct import order_product
+from models.role import Role
 
 from routes.customerBP import customer_blueprint
 from routes.productBP import product_blueprint
@@ -44,7 +45,7 @@ if __name__ == '__main__':
     rate_limit_config()
 
     with app.app_context():
-        # db.drop_all()
+        #db.drop_all()
         db.create_all()
 
     app.run()
