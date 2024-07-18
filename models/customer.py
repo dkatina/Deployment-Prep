@@ -15,3 +15,8 @@ class Customer(Base):
     role: Mapped['Role'] = db.relationship()
     # One-to-Many: Customer and Order
     orders: Mapped[List["Order"]] = db.relationship(back_populates="customer")
+
+   
+
+
+
