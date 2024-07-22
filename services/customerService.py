@@ -36,3 +36,7 @@ def find_all_paginate(page, per_page):
     query =select(Customer)
     customers = db.paginate(query, page=page, per_page=per_page)
     return customers
+
+def cart():
+    #query user, and return that user to controller
+    pass

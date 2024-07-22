@@ -43,3 +43,9 @@ def find_all_paginate():
     per_page = int(request.args.get("per_page"))
     customers = customerService.find_all_paginate(page, per_page)
     return customers_schema.jsonify(customers), 200
+
+
+def cart():
+    pass
+    #call customer cart service will return a user (based on an id either from route or token)
+    #return customer to view useing CustomerCart Schema

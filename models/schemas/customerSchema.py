@@ -34,4 +34,13 @@ class CustomerOrderSchema(ma.Schema):
     class Meta: 
         fields = ("id", "name", "email", "phone", "username", "password")
 
+
+class CustomerCart(ma.Schema):
+    name = fields.String(required=True)
+    cart = fields.Nested("ProductSchema", many=True)
+
     
+    class Meta:
+        fields = ("name", "cart")
+
+customer_cart = CustomerCart()
