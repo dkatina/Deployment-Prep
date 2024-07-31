@@ -18,6 +18,11 @@ jobs: #The things we want to happen on push
         uses: actions/setup-python@v2
         with:
           python-version: 3.12 #setting up python on our build environment
+
+      - name: Install libpq-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpq-dev
         
       - name: Create vertual Environment
         run: |
@@ -47,6 +52,11 @@ jobs: #The things we want to happen on push
         uses: actions/setup-python@v2
         with:
           python-version: 3.12 #setting up python on our build environment
+
+      - name: Install libpq-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpq-dev
         
       - name: Create vertual Environment
         run: |
@@ -72,6 +82,11 @@ jobs: #The things we want to happen on push
         uses: actions/setup-python@v2
         with:
           python-version: 3.12 #setting up python on our build environment
+      
+      - name: Install libpq-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpq-dev
         
       - name: Create vertual Environment
         run: |
