@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from database import db
 from models.schemas import ma
 from limiter import limiter
@@ -49,5 +50,9 @@ def rate_limit_config():
 
 
 
+
 app = create_app('ProductionConfig')
 
+with app.app_context():
+    db.drop_all()
+    db.create_all()
