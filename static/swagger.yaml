@@ -3,7 +3,7 @@ info:
   title: "Ecommerce API"
   description: "API to manage ecommerce interactions"
   version: "1.0.0"
-host: "https://deployment-prep-1.onrender.com/" #working on local host
+host: "deployment-prep-1.onrender.com" #working on local host
 schemes:
   - "http"
 consumes:
