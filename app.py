@@ -53,7 +53,7 @@ def rate_limit_config():
 
 
 
-app = create_app('ProductionConfig') if os.environ.get('SQLALCHEMY_DATABASE_URI') else create_app('DevelopmentConfig')
+app = create_app('ProductionConfig')
 
 with app.app_context():
     db.drop_all()
