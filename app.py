@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask_cors import CORS
 from database import db
@@ -52,7 +53,7 @@ def rate_limit_config():
 
 
 
-app = create_app('ProductionConfig')
+app = create_app('ProductionConfig') if os.environ.get('SQLALCHEMY_DATABASE_URI') else create_app('DevelopmentConfig')
 
 with app.app_context():
     db.drop_all()
